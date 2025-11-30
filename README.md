@@ -1,42 +1,49 @@
-# Lampu Otomatis dengan Sensor LDR
+📌 Automatic Light Control with LDR Sensor
 
-Proyek ini akan menyalakan LED secara otomatis ketika cahaya di sekitarnya gelap dan mematikannya saat terang. Kontrol manual juga bisa dilakukan lewat Blynk.
+Proyek ini adalah sistem kontrol lampu otomatis menggunakan sensor LDR dan Arduino untuk mendeteksi kondisi cahaya di lingkungan sekitar.
 
-## Kebutuhan Hardware
+⚙️ Komponen yang Digunakan
 
--   ESP32
--   Sensor LDR (Light Dependent Resistor)
--   Resistor 10kΩ
--   LED
--   Resistor 220Ω
--   Breadboard dan Kabel Jumper
+Arduino (Uno / Nano / sejenis)
 
-## Koneksi
+Sensor LDR
 
--   **LDR:**
-    -   Satu kaki -> 3V3 ESP32
-    -   Kaki lainnya -> Resistor 10kΩ -> GND ESP32
-    -   Sambungkan juga kaki yang terhubung ke resistor ke **GPIO 34** ESP32.
--   **LED:**
-    -   Kaki `Anode (+)` -> Resistor 220Ω -> **GPIO 2** ESP32
-    -   Kaki `Cathode (-)` -> GND ESP32
+LED
 
-## Cara Penggunaan
+Resistor
 
-1.  **Setup Software:**
-    -   Install library `Blynk` dari Arduino IDE Library Manager.
+Kabel jumper
 
-2.  **Setup Blynk:**
-    -   Buat project baru di aplikasi Blynk, pilih device ESP32.
-    -   Salin `Auth Token`.
-    -   Tambahkan widget:
-        -   **Button** (Manual Control) -> Output Pin `V1`, Mode `Switch`
+🛠️ Cara Kerja
 
-3.  **Upload Kode:**
-    -   Buka file `smart_light_ldr.ino`.
-    -   Ganti kredensial WiFi dan Blynk Auth Token.
-    -   Upload kode ke ESP32.
+Sensor LDR membaca intensitas cahaya.
 
-4.  **Jalankan:**
-    -   Secara default, LED akan menyala jika ruangan gelap.
-    -   Gunakan tombol di Blynk untuk mengontrol LED secara manual.
+Jika kondisi gelap (LOW) → LED menyala.
+
+Jika kondisi terang (HIGH) → LED mati.
+
+Data pembacaan ditampilkan melalui Serial Monitor.
+
+▶️ Cara Menjalankan
+
+Rangkai komponen sesuai pin:
+
+LDR → Pin 2
+
+LED → Pin 7
+
+Upload program ke Arduino.
+
+Buka Serial Monitor (9600 baud).
+
+Tutup LDR untuk mensimulasikan kondisi gelap.
+
+✅ Fitur Utama
+
+Kontrol lampu otomatis
+
+Monitoring lewat Serial Monitor
+
+Hemat energi
+
+Mudah dikembangkan
